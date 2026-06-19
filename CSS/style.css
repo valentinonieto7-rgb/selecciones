@@ -1,0 +1,317 @@
+:root {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text, #222);
+    background: var(--bg, linear-gradient(180deg, #f4f7fb 0%, #dfe7f3 100%));
+    transition: background 0.3s ease;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+body.inicio {
+    --bg: linear-gradient(180deg, #eef3fb 0%, #dfe7f8 100%);
+    --text: #102a54;
+    --primary: #11356f;
+    --nav-start: #0353a4;
+    --nav-end: #4895ef;
+    --card: rgba(255, 255, 255, 0.92);
+    --shadow: rgba(17, 53, 111, 0.12);
+}
+
+body.arabia {
+    --bg: linear-gradient(180deg, #eaf6e8 0%, #cfe9d6 100%);
+    --text: #12411f;
+    --primary: #0f6e2e;
+    --nav-start: #0f6e2e;
+    --nav-end: #76c67a;
+    --card: rgba(255, 255, 255, 0.94);
+    --shadow: rgba(15, 110, 46, 0.16);
+}
+
+body.costa-marfil {
+    --bg: linear-gradient(180deg, #fff5e5 0%, #ffe5c2 100%);
+    --text: #5f3d10;
+    --primary: #d46b1d;
+    --nav-start: #f2771d;
+    --nav-end: #ffbe2e;
+    --card: rgba(255, 255, 255, 0.94);
+    --shadow: rgba(210, 107, 29, 0.16);
+}
+
+body.senegal {
+    --bg: linear-gradient(180deg, #f7f1de 0%, #e9dfba 100%);
+    --text: #233920;
+    --primary: #1c6d2b;
+    --nav-start: #1c6d2b;
+    --nav-end: #f3d54e;
+    --card: rgba(255, 255, 255, 0.94);
+    --shadow: rgba(28, 109, 43, 0.16);
+}
+
+main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.page-header {
+    position: relative;
+    margin: 2rem auto;
+    padding: 3.5rem 1.5rem 2rem;
+    background: var(--card);
+    border-radius: 24px;
+    box-shadow: 0 18px 40px var(--shadow);
+    text-align: center;
+}
+
+.badge-corner {
+    position: absolute;
+    top: 1rem;
+    width: clamp(70px, 10vw, 100px);
+    opacity: 0.95;
+    pointer-events: none;
+}
+
+.badge-left {
+    left: 1rem;
+}
+
+.badge-right {
+    right: 1rem;
+}
+
+@media (max-width: 520px) {
+    .page-header {
+        padding-top: 4.5rem;
+    }
+
+    .badge-corner {
+        width: clamp(50px, 12vw, 70px);
+        top: 0.8rem;
+    }
+}
+
+.page-header h1 {
+    margin: 0 0 0.6rem;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    letter-spacing: -0.04em;
+    color: var(--primary);
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--text);
+}
+
+.page-header p {
+    margin: 1rem auto 0;
+    max-width: 720px;
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin: 2rem 0;
+}
+
+.team-card {
+    padding: 1.8rem;
+    background: var(--card);
+    border-radius: 24px;
+    box-shadow: 0 18px 40px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-card h2 {
+    margin: 0;
+    color: var(--primary);
+}
+
+.team-card p {
+    margin: 0;
+    color: var(--text);
+}
+
+.team-card a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.25rem;
+    width: fit-content;
+    background: linear-gradient(135deg, var(--nav-start), var(--nav-end));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card a:hover,
+.team-card a:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+nav a {
+    display: inline-block;
+    width: 100%;
+    max-width: 260px;
+    padding: 1rem 1.2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--nav-start), var(--nav-end));
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+    opacity: 0.98;
+}
+
+.badge-img {
+    display: block;
+    width: clamp(120px, 18vw, 180px);
+    max-width: 180px;
+    margin: 1.5rem auto 0.8rem;
+}
+
+.page-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.page-footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    min-width: 160px;
+    background: linear-gradient(135deg, var(--nav-start), var(--nav-end));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.page-footer a:hover,
+.page-footer a:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+    opacity: 0.98;
+}
+
+.section-card {
+    margin: 1.8rem auto;
+    padding: 2rem 1.5rem;
+    background: var(--card);
+    border-radius: 24px;
+    box-shadow: 0 18px 40px var(--shadow);
+}
+
+.section-card h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.section-card p {
+    margin: 1rem 0 0;
+    color: var(--text);
+    font-size: 1.15rem;
+}
+
+.image-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 1.5rem;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 18px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+figcaption {
+    margin-top: 0.8rem;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto 0;
+    border-radius: 18px;
+    box-shadow: 0 14px 32px rgba(17, 53, 111, 0.12);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.32), transparent 20%),
+                      radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.24), transparent 18%);
+}
+
+@media (min-width: 640px) {
+    nav {
+        flex-direction: row;
+    }
+
+    nav a {
+        width: auto;
+    }
+}
